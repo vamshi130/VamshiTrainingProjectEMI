@@ -1,0 +1,58 @@
+<mat-toolbar fxLayout="row" class="mat-toolbar mat-primary" fxLayoutAlign="space-between center"
+  
+  *ngIf="isAuthenticated"
+  >
+
+  <div>
+    <img src="../assets/EuromonitorLogoCircular.jpg" alt="" style="border-radius: 50%; width: 3vw;">
+    <a mat-button>
+      <mat-icon>home</mat-icon>
+    </a>
+    <button mat-button [routerLink]="['/budget']" *ngIf="isUser" >Requests</button>
+    <!-- <button mat-button *ngIf="!isUser">Latest-Requests</button>
+    <button mat-button *ngIf="!isUser">Approved</button>
+    <button mat-button *ngIf="!isUser">Completed</button>-->
+
+    <button mat-button *ngIf="!isUser" [routerLink]="['/budgetRequest']">Make-Request</button> 
+    <!-- DropDown For Manager Page -->
+    <button mat-button [matMenuTriggerFor]="myRequests" *ngIf="!isUser">My-Requests <mat-icon>expand_more</mat-icon></button>
+    <mat-menu #myRequests="matMenu">
+      <button mat-menu-item [routerLink]="['/pendingRequests']">Initiated</button>
+      <button mat-menu-item [routerLink]="['/approvedRequests']" >Approved</button>
+      <button mat-menu-item  [routerLink]="['/rejectedRequests']">Rejected</button>
+      <button mat-menu-item  [routerLink]="">Completed</button>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="TeamRequests" *ngIf="!isUser"  >Team-Requests <mat-icon>expand_more</mat-icon></button>
+    <mat-menu #TeamRequests="matMenu">
+      <button mat-menu-item [routerLink]="['/Request/pendingReqByM']">Initiated</button>
+      <button mat-menu-item [routerLink]="['/Request/approvedReqByM']" >Approved</button>
+      <button mat-menu-item  [routerLink]="['/Request/rejectedReqByM']">Rejected</button>
+      <button mat-menu-item  [routerLink]="['/Request/completedReqByM']">Completed</button>
+    </mat-menu> 
+
+
+    <button mat-button [matMenuTriggerFor]="menu" *ngIf="isUser"  >View-History <mat-icon>expand_more</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item [routerLink]="['/budget/pendingRequests']">Pending</button>
+      <button mat-menu-item [routerLink]="['/budget/approvedRequests']" >Approved</button>
+      <button mat-menu-item  [routerLink]="['/budget/rejectedRequests']">Rejected</button>
+      <button mat-menu-item  [routerLink]="['/budget/completedRequests']">Completed</button>
+    </mat-menu>
+    <!-- <a mat-button>Upload</a> -->
+  </div>
+  <!-- <div>
+          <h1>helo</h1>
+    </div> -->
+  <div>
+    <a mat-button>
+      <mat-icon class="mr">account_circle</mat-icon>{{userName}}
+    </a>
+    <a mat-button (click)="LogOut()">
+      <mat-icon class="mr">logout</mat-icon>LogOut
+    </a>
+
+
+  </div>
+</mat-toolbar>
+<router-outlet></router-outlet>

@@ -1,0 +1,27 @@
+<div class="main-bg" >
+    <div class="login-container text-c animated flipInX ">
+       
+        <div class="container-content">
+            <div>
+                <img  src="../../../assets/EuromonitorLogoCircular.jpg" alt="" style=" height:66px; width: 70px; border-radius: 50%;">
+            </div>
+                <h3 class="text-whitesmoke">Welcome To Euromonitor</h3>
+                <p class="text-whitesmoke">Sign In</p>
+                <form  class="margin-t" #myForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit(myForm)" >
+                <div class="form-group">
+                    <input style="border-radius: 50px;" type="UserName"  name="UserName" #UserName="ngModel" class="form-control margin-b" id="floatingInput" placeholder="UserName" required="" ngModel>
+                </div>
+                <div class="form-group">
+                    <input  style="border-radius:50px;" type="password" value="krishna" name="password" #password="ngModel" class="form-control margin-b" id="floatingPassword" placeholder="*********" required="" ngModel>
+                </div>
+                <button style="border-radius:50px;" [disabled]="myForm.form.invalid" type="submit" class="form-button button-l margin-b">Sign In</button>
+
+
+                <a class="text-darkyellow" href="#"><small>Forgot your password?</small></a>
+                <p class="text-whitesmoke text-center"><small>Do not have an account?</small></p>
+                <a class="text-darkyellow" href="#"><small>Sign Up</small></a>
+                <!-- {{myForm.form.invalid}} -->
+            </form>
+        </div>
+</div>
+  </div>

@@ -1,0 +1,48 @@
+<app-navbar></app-navbar>
+
+<div class="content">
+    <div style="text-align: center;margin-top: 5px;"> <h1>Intitiated Requests</h1></div>
+   
+    <div fxLayout="row wrap"  fxLayoutGap="25px grid" class="margin">
+        <div fxFlex="33%" fxFlex.xs="100%" fx.Flex.lt-md="50%" fxFlex.sm="50%" *ngFor="let num of requests">
+            <mat-card class="example-card">
+                <mat-card-title-group>
+                  <mat-card-title>REQ00{{num.budgetRequest.id}}</mat-card-title>
+                  <mat-card-subtitle>{{num.budgetRequest.purpose}}</mat-card-subtitle>
+                  <!-- <img mat-card-image src="../../../../../../assets/hourglass.png" alt="Photo of a Shiba Inu"> -->
+                  <img mat-card-image style="width: 34%;" src="../../../../../../assets/hourglass.png" alt="Photo of a Shiba Inu">
+                  
+                </mat-card-title-group>
+                <mat-card-content>
+                  <p>{{num.budgetRequest.description}}
+                </p>
+                  <div fxLayout="row wrap">
+                    <div fxFlex="60%" class="font">
+                     <p>Advance Ammount :</p>
+                     <p>Estimated Ammount :</p>
+                     <p>Plan Date :</p>
+                     <p>Requested By:</p>
+                    </div>
+                    <div fxFlex="40%" class="fontvalues">
+                     <p> {{num.budgetRequest.advanceAmmount}}</p>
+                     <p>{{num.budgetRequest.costEstimated}}</p>
+                     <p>{{num.budgetRequest.date | date : 'yyyy-MM-dd' }}</p>
+                     <p>{{num.firstName}}</p>
+
+                    </div>
+
+                 </div>
+                </mat-card-content>
+                <mat-card-actions>
+                  <button mat-raised-button color="primary" *ngIf="checkAmmountForUser(num.budgetRequest)" (click)="onAccept(num.budgetRequest)" >Accept</button>
+                  <button mat-raised-button color="primary" *ngIf="checkForwardButton(num.budgetRequest)" (click)="onForward(num.budgetRequest)">Forward</button>      
+                  <button mat-raised-button color="warn"   (click)="onReject(num)"  >Reject</button>  
+                  </mat-card-actions>
+              </mat-card>
+
+    
+        </div>
+        
+    </div>
+    
+</div>

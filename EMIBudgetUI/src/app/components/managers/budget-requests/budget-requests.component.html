@@ -1,0 +1,66 @@
+<app-navbar></app-navbar>
+<p>budget-requests works!</p>
+
+<div class="content" >
+    <div fxLayout="row wrap" fxLayoutGap="25px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fx.Flex.lt-md="50%" fxFlex.sm="33%" *ngFor="let num of requests">
+            <mat-card class="mat-elevation-z4">
+                <mat-card-header>
+                    <div fxLayout="row wrap" style="width: 100%;">
+                        <div fxFlex="50%" >
+                            <mat-card-title>REQ00{{num.budgetRequest.id}}</mat-card-title>
+                            <mat-card-subtitle>{{num.budgetRequest.purpose}}</mat-card-subtitle>
+                        </div>
+                        <div fxFlex="50%" style="text-align: end;">
+                            <p>{{num.firstName}} </p>
+                            <mat-card-subtitle>{{num.phoneNumber}}</mat-card-subtitle>
+                            <!-- <p></p> -->
+                        </div>
+                    </div>
+                </mat-card-header>
+                <!-- <img mat-card-sm-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" > -->
+                <img mat-card-image src="../../../../assets/request.jfif" alt="Photo of a Shiba Inu">
+                <mat-card-content>
+                    <p>
+                        {{num.budgetRequest.description}}
+                    </p>
+                    <!-- <div class="row col-md-12 col-sm-12">
+                        <div class="col-md-6 col-sm-6">
+                           <p>Advance Ammount :</p>
+                        </div>
+                        <div class="col-md-6 col-sm-6">
+                          <p> 20000</p>
+                        </div>
+                    </div> -->
+                    <div fxLayout="row wrap">
+                       <div fxFlex="60%">
+                        <p>Advance Ammount :</p>
+                        <p>Estimated Ammount :</p>
+                        <p>Plan Date :</p>
+                       </div>
+                       <div fxFlex="40%">
+                        <p> {{num.budgetRequest.advanceAmmount}}</p>
+                        <p>{{num.budgetRequest.costEstimated}}</p>
+                        <p>{{num.budgetRequest.date | date : 'yyyy-MM-dd'}}</p>
+
+                       </div>
+
+                    </div>
+
+                </mat-card-content>
+                <mat-card-actions>
+                    <button mat-raised-button color="primary" *ngIf="checkAmmountForUser(num.budgetRequest)" >Accept</button>
+                    <button mat-raised-button color="primary"  *ngIf="checkForwardButton(num.budgetRequest)">Forward</button>                   
+                    <button mat-raised-button color="warn" >Reject</button>
+                    <button mat-raised-button>Download</button>                    
+                </mat-card-actions>
+                <mat-card-footer>
+        
+                </mat-card-footer>
+            </mat-card>
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+
+<div class="content">
+    <div style="text-align: center;margin-top: 5px;"> <h1>Approved Requests</h1></div>
+    <div fxLayout="row wrap"  fxLayoutGap="25px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fx.Flex.lt-md="50%" fxFlex.sm="33%" *ngFor="let num of requests">
+            <mat-card class="example-card">
+                <mat-card-title-group>
+                  <mat-card-title style="font-size: large;">REQ00{{num.budgetRequest.id}}</mat-card-title>
+                  <mat-card-subtitle>{{num.purpose}}</mat-card-subtitle>
+                  <!-- <img mat-card-image src="../../../../../../assets/hourglass.png" alt="Photo of a Shiba Inu"> -->
+                  <img mat-card-image style="width: 34%;" src="../../../../../../assets/approved1.webp" alt="Photo of a Shiba Inu">  
+                </mat-card-title-group>
+                <mat-card-content>
+                  <p>{{num.budgetRequest.description}}
+                </p>
+                  <div fxLayout="row wrap">
+                    <div fxFlex="60%">
+                     <p>Advance Ammount :</p>
+                     <p>Estimated Ammount :</p>
+                     <p>Plan Date :</p>
+                    </div>
+                    <div fxFlex="40%">
+                     <p> {{num.budgetRequest.advanceAmmount}}</p>
+                     <p>{{num.budgetRequest.costEstimated}}</p>
+                     <p>{{num.budgetRequest.date | date :'yyyy-MM-dd'}}</p>
+
+                    </div>
+
+                 </div>
+                </mat-card-content>
+                <mat-card-actions>
+                    <!-- <button mat-raised-button color="primary">Upload</button> -->
+                    <!-- <button mat-raised-button color="warn"><mat-icon>delete</mat-icon></button> -->
+                  </mat-card-actions>
+              </mat-card>
+
+    
+        </div>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,26 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+  }
+  .mat-card-title{
+      margin-top: 21px;
+  }
+  .mat-card-image{
+      width: 34%;
+  }
+  .content{
+      padding: 40px;
+  }
+  .font{
+    font-size: small;
+    font-family: serif;
+    font-weight: bolder;
+  }
+  .fontvalues{
+    font-weight: 400;
+    font-size: small;
+  }
+  .margin{
+    margin: 33px -25px -25px 42px !important; 
+  }

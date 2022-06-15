@@ -1,0 +1,12 @@
+.content {
+    padding: 40px;
+}
+
+.content > mat-card {
+    margin-bottom: 16px;
+}
+::ng-deep .mat-card-header-text {
+    /* margin-right:0px ; */
+        margin: 0 0px !important
+/* px */
+}

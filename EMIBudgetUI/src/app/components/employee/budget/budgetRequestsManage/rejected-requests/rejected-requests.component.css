@@ -1,0 +1,31 @@
+.example-card {
+    max-width: 400px;
+    margin-bottom: 8px;
+  }
+  .mat-card-title{
+      margin-top: 21px;
+  }
+  .mat-card-image{
+      width: 34%;
+  }
+  .content{
+      padding: 40px;
+  }
+  .font{
+    font-size: small;
+    font-family: serif;
+    font-weight: bolder;
+  }
+  .fontvalues{
+    font-weight: 400;
+    font-size: small;
+  }
+  ::ng-deep .mat-tooltip {
+    background: rgb(5, 36, 14)!important;
+    font-size: medium;
+  }
+  .textLimit{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }

@@ -1,0 +1,15 @@
+.heading{
+    width: 100%;
+    background-color: cadetblue; 
+    margin-top: revert;
+    /* margin-top: 15px; */
+}
+.font{
+    font-size: small;
+    font-family: serif;
+    font-weight: bolder;
+  }
+  .fontvalues{
+    font-weight: 400;
+    font-size: small;
+  }

@@ -1,0 +1,46 @@
+<app-navbar></app-navbar>
+
+<div class="content">
+    <div style="text-align: center;margin-top: 5px;"> <h1>Rejected Requests</h1></div>
+
+    <div fxLayout="row wrap"  fxLayoutGap="25px grid">
+        <div fxFlex="25%" fxFlex.xs="100%" fx.Flex.lt-md="50%" fxFlex.sm="33%" *ngFor="let num of requests">
+            <mat-card class="example-card" style="box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
+                <mat-card-title-group>
+                  <mat-card-title>REQ00{{num.id}}</mat-card-title>
+                  <mat-card-subtitle>Medium</mat-card-subtitle>
+                  <!-- <img mat-card-image src="../../../../../../assets/hourglass.png" alt="Photo of a Shiba Inu"> -->
+                  <img mat-card-image style="width: 34%;" src="../../../../../../assets/rejected2.jpg" alt="Photo of a Shiba Inu">
+                  
+                </mat-card-title-group>
+                <mat-card-content>
+                  <p>{{num.description}}
+                </p>
+                  <div fxLayout="row wrap">
+                    <div fxFlex="60%" class="font">
+                     <p>Advance Ammount :</p>
+                     <p>Estimated Ammount :</p>
+                     <p>Plan Date :</p>
+                     <p>Rejected By :</p>
+                     <p>Reason :</p>
+                    </div>
+                    <div fxFlex="40%" class="fontvalues">
+                      <p> {{num.advanceAmmount}}</p>
+                      <p>{{num.costEstimated}}</p>
+                      <p>{{num.date | date : 'yyyy-MM-dd' }}</p>
+                      <p>{{num.reportingTo}}</p>
+                      <p class="textLimit" matTooltip={{num.rejectionReason}}>{{num.rejectionReason}}</p>
+ 
+
+                    </div>
+
+                 </div>
+                </mat-card-content>
+              </mat-card>
+
+    
+        </div>
+        
+    </div>
+    
+</div>

@@ -1,0 +1,64 @@
+<div class="container">
+    <div class="row">
+
+        <div fxLayout="row wrap">
+            <div fxLayout="row wrap" class="heading">
+                     <div fxFlex="100%" style="text-align:  center; margin-top: 15px;">
+                          <p>Rejection Reason</p>
+                     </div>
+            </div>
+            <div fxLayout="row wrap" style="width: 100%;     margin-top: 17px;">
+                <div fxFlex="50%" >
+                    <p>REQ00{{requestedData.budgetRequest.id}}</p>
+                    <p>{{requestedData.budgetRequest.purpose}}</p>
+                </div>
+                <div fxFlex="50%" style="text-align: end;">
+                    <p>{{requestedData.firstName}} </p>
+                    <p>{{requestedData.phoneNumber}}</p>
+                    <!-- <p></p> -->
+                </div>
+            </div>
+            <!-- <img fxFlex="100%" style="width: 12vw;" src="../../../../../../assets/rejected2.jpg" alt="Photo of a Shiba Inu"> -->
+
+            <div fxFlex="100%">
+                 <!-- <p>{{requestedData.budgetRequest.description}}</p> -->
+            </div>
+            <div fxFlex="60%" class="font">
+                <p>Advance Ammount :</p>
+                <p>Estimated Ammount :</p>
+                <p>Plan Date :</p>
+            </div>
+            <div fxFlex="40%" class="fontvalues">
+                <p> {{requestedData.budgetRequest.advanceAmmount}}</p>
+                <p>{{requestedData.budgetRequest.costEstimated}}</p>
+                <p>{{requestedData.budgetRequest.date | date : 'yyyy-MM-dd' }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <form [formGroup]="rejectionReactiveForm" (ngSubmit)="onSubmit(rejectionReactiveForm.value)">
+            <div>
+                <mat-form-field class="col-md-12" appearance="fill">
+                    <mat-label>Reason</mat-label>
+                    <input matInput type="textarea" formControlName="rejectionReason">
+                    <!-- <mat-error *ngIf="budgetReactiveForm.get('description')?.invalid && budgetReactiveForm.get('description')?.touched">
+                        <span *ngIf="budgetReactiveForm.get('description')?.errors?.['required']">required</span>
+
+                        <span *ngIf="budgetReactiveForm.get('description')?.errors?.['minlength']">Atleast 3 chars required</span>
+
+                    </mat-error> -->
+                </mat-form-field>
+            </div>
+            <div>
+                
+                <button type="submit" mat-raised-button color="primary"  >Submit</button> &nbsp;
+                <button type="button" mat-raised-button color="warn" (click)="closeDialog()" >Cancel</button>      
+               
+            </div>
+
+
+        </form>
+
+    </div>
+
+</div>

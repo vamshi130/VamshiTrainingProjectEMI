@@ -1,0 +1,80 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+    <mat-card style="width: 60%; margin-top: 10%; background: -webkit-linear-gradient(left, #0072ff, #00c6ff);">
+        <div style=" text-align: center; ">
+            <img src="../../../assets/rocket_contact.png" class="contactImg">
+            <div style="text-align: center;">
+                <span> Budget Approval Request</span>
+            </div>
+        </div>
+        <mat-card-header>
+
+        </mat-card-header>
+        <mat-card-content>
+
+           <form [formGroup]="budgetReactiveForm" (ngSubmit)="onSubmit(budgetReactiveForm.value)">
+            <div class="container" style="padding:8%">
+
+                <div class="row">
+                    <div class="col-md-10 offset-md-1 row">
+                        <div class="col-md-6">
+                            <mat-form-field class="col-md-12" appearance="fill">
+                                <mat-label>Purpose</mat-label>
+                                <input matInput type="text" formControlName="purpose">
+                                <mat-error *ngIf="budgetReactiveForm.get('purpose')?.invalid && budgetReactiveForm.get('purpose')?.touched">
+                                    <span *ngIf="budgetReactiveForm.get('purpose')?.errors?.['required']">required</span>
+                                    <span *ngIf="budgetReactiveForm.get('purpose')?.errors?.['minlength']">Atleast 4 chars required</span>
+                                </mat-error>
+                            </mat-form-field>
+                            <mat-form-field class=" col-md-12" appearance="fill">
+                                <mat-label>Cost Estimated</mat-label>
+                                <input type="number" matInput formControlName="costEstimated">
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-6">
+                            <mat-form-field class=" col-md-12" appearance="fill">
+                                
+                                <!-- <mat-label>Plan Date</mat-label>
+                                <input matInput [matDatepicker]="picker" formControlName="date">
+                                <mat-error *ngIf="budgetReactiveForm.get('date')?.invalid && budgetReactiveForm.get('date')?.touched">
+                                    <span *ngIf="budgetReactiveForm.get('date')?.errors?.['required']">required</span>
+                                </mat-error>
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker></mat-datepicker> -->
+                                <mat-label>Plan Date</mat-label>
+                                <input matInput value="{{requestData.date | date:'yyyy-MM-dd' }}" type="date" formControlName="date">
+                                <mat-error *ngIf="budgetReactiveForm.get('date')?.invalid && budgetReactiveForm.get('date')?.touched">
+                                    <span *ngIf="budgetReactiveForm.get('date')?.errors?.['required']">required</span>
+                                </mat-error>
+                               
+                            </mat-form-field>
+                            <mat-form-field class="col-md-12" appearance="fill">
+                                <mat-label>Advance Ammount</mat-label>
+                                <input type="number" matInput formControlName="advanceAmmount">
+                            </mat-form-field>
+                        </div>
+                        
+                        <mat-form-field class="col-md-12" appearance="fill">
+                            <mat-label>Description</mat-label>
+                            <input matInput type="text" formControlName="description">
+                            <mat-error *ngIf="budgetReactiveForm.get('description')?.invalid && budgetReactiveForm.get('description')?.touched">
+                                <span *ngIf="budgetReactiveForm.get('description')?.errors?.['required']">required</span>
+
+                                <span *ngIf="budgetReactiveForm.get('description')?.errors?.['minlength']">Atleast 3 chars required</span>
+
+                            </mat-error>
+                        </mat-form-field>
+                        <div class="col-md-6">
+                            <button type="submit" class="form-control"
+                                style="background-color: #52836599;">Submit</button>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="form-control"
+                                style="background-color: #52836599;" (click)="resetForm()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           </form>
+        </mat-card-content>
+    </mat-card>
+</div>

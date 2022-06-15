@@ -1,0 +1,26 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "49a9c397-e753-4591-8178-fd2395a80fd0": {
+      "ProjectGuid": "49a9c397-e753-4591-8178-fd2395a80fd0",
+      "DisplayName": "EMIbudgetAPI",
+      "ColorIndex": 0
+    },
+    "3d567e67-49b5-4ad1-b6e9-72f465357494": {
+      "ProjectGuid": "3d567e67-49b5-4ad1-b6e9-72f465357494",
+      "DisplayName": "EMIbudgetAPI.DataModels",
+      "ColorIndex": 1
+    },
+    "c1f9e8ec-931a-45f8-bf0d-77c588e98ecc": {
+      "ProjectGuid": "c1f9e8ec-931a-45f8-bf0d-77c588e98ecc",
+      "DisplayName": "EMIbudgetAPI.ServiceModel",
+      "ColorIndex": 2
+    },
+    "97813963-b9d8-43e5-b0f2-64e16f064a11": {
+      "ProjectGuid": "97813963-b9d8-43e5-b0f2-64e16f064a11",
+      "DisplayName": "EMIbudgetAPI.ServiceModels",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}
